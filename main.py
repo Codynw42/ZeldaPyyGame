@@ -1,7 +1,7 @@
 import pygame
 import os
 
-
+#test
 FPS = 60
 WHITE = (255, 255, 255)
 WIDTH, HEIGHT = 1400, 800
