@@ -5,11 +5,13 @@ import os
 FPS = 60
 WHITE = (255, 255, 255)
 WIDTH, HEIGHT = 1400, 800
+VEL = 5
+
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 TEMPLE = pygame.transform.scale(pygame.image.load(os.path.join('Assets', 'Temple_Time.jpeg')), (WIDTH, HEIGHT))
 
-LINK_WIDTH, LINK_HEIGHT = 600, 300
+LINK_WIDTH, LINK_HEIGHT = 520, 300
 LINK_IMAGE = pygame.image.load(os.path.join('Assets', 'Link_Face_Right.png'))
 LINK = pygame.transform.rotate(pygame.transform.scale(LINK_IMAGE, (LINK_WIDTH, LINK_HEIGHT)), 0) 
 
@@ -19,7 +21,8 @@ def draw_surface():
     WIN.blit(TEMPLE, (0, 0))
     WIN.blit(LINK, (60, 500))
     pygame.display.update()
-    
+
+
 
 
 def mainloop():                     
@@ -34,11 +37,15 @@ def mainloop():
                 pygame.quit()                                   #Without a main loop, python would not be able to draw the window, it would start and stop immediately. 
 
         
+        
+        
+        keys_pressed = pygame.key.get_pressed() #you must use this code to be able to press multiple keys at a time.
         draw_surface()
+
+    
+          
         
         
-
-
 if __name__ == "__main__":
     mainloop()                                
         
