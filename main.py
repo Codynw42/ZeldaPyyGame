@@ -11,7 +11,7 @@ VEL = 5
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 TEMPLE = pygame.transform.scale(pygame.image.load(os.path.join('Assets', 'Temple_Time.jpeg')), (WIDTH, HEIGHT))
 
-LINK_WIDTH, LINK_HEIGHT = 520, 300
+LINK_WIDTH, LINK_HEIGHT = 520, 330
 LINK_IMAGE = pygame.image.load(os.path.join('Assets', 'Link_Face_Right.png'))
 LINK = pygame.transform.rotate(pygame.transform.scale(LINK_IMAGE, (LINK_WIDTH, LINK_HEIGHT)), 0) 
 
