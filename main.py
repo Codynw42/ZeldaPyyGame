@@ -40,18 +40,24 @@ def draw_surface(link, WalkLeft, WalkRight, left, right):
     if walkCount + 1 >= 27:
         walkCount = 0
     if left:
-        WIN.blit(Link_Left[walkCount//3], (link.x, link.y))
+        WIN.blit(Link_Left), (link.x, link.y)
         walkCount += 1
     elif right:
-        WIN.blit(Link_Right[walkCount//3], (link.x, link.y))
+        WIN.blit(Link_Right), (link.x, link.y)
         walkCount += 1
-    else: WIN.blit(LINK, (link.x, link.y))
+    else: WIN.blit(LINK), (link.x, link.y)
 
     pygame.display.update() 
 
 
 
-def link_movement(keys_pressed, link, isJump, jumpCount, left, right, VEL, MASS, walkCount):
+def link_movement(keys_pressed, link, VEL, MASS):
+    global isJump
+    global jumpCount
+    global walkCount
+    global left
+    global right
+    
     if keys_pressed[pygame.K_a]:            #left
         link.x -= VEL
         left = True
@@ -113,7 +119,7 @@ def mainloop():
 
         
         keys_pressed = pygame.key.get_pressed()          #you must use this code to be able to press multiple keys at a time.
-        link_movement(keys_pressed, link, isJump, jumpCount, left, right, VEL, MASS, walkCount)
+        link_movement(keys_pressed, link, VEL, MASS) 
         draw_surface(link, WalkLeft, WalkRight, left, right)
         
            
